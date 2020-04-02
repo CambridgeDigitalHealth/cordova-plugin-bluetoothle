@@ -695,7 +695,9 @@ declare namespace BluetoothlePlugin {
         /** Array of service UUIDs on iOS */
         services: string[],
         /** device's name */
-        name?: string
+        name?: string,
+        /** device's name */
+        manufacturerData?: string
     }
 
     interface CommonInfo {

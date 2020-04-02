@@ -307,9 +307,14 @@ NSString *const operationWrite = @"write";
 
   [advertData setValue:[self getUuids:obj forType:@"services"] forKey:CBAdvertisementDataServiceUUIDsKey];
   NSString* name = [obj valueForKey:@"name"];
+  NSString* manufacturerData = [obj valueForKey:@"manufacturerData"];
 
   if (name) {
     [advertData setValue:name forKey:CBAdvertisementDataLocalNameKey];
+  }
+
+  if (manufacturerData) {
+    [advertData setValue:manufacturerData forKey:CBAdvertisementDataManufacturerDataKey];
   }
 
   advertisingCallback = command.callbackId;
